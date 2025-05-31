@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş Yap – HolaHello</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Giriş Yap</h1>
+  </header>
+
+  <!-- Ortak Menü -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="kayit.html">Kayıt Ol</a></li>
+      <li><a href="giris.html">Giriş</a></li>
+      <li><a href="dersler.html">Dersler</a></li>
+    </ul>
+  </nav>
+
+  <section class="login-form">
+    <form>
+      <label for="email">E-posta:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Şifre:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="button" onclick="window.location.href='dersler.html'">Giriş Yap</button>
+
+    </form>
+  </section>
+
+</body>
+
+</html>

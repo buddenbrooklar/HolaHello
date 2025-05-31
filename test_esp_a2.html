@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İspanyolca A2 Testi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .quiz-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #e7f3f7;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    h2 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    .result { font-weight: bold; margin-top: 10px; }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #00796b;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #004d40; }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>İspanyolca A2 Seviyesi Testi – 10 Soru</h2>
+
+    <div class="question">
+      <p>1. ¿Qué significa <strong>"trabajar"</strong>?</p>
+      <input type="radio" name="q1" value="a"> Dinlenmek<br>
+      <input type="radio" name="q1" value="b"> Çalışmak<br>
+      <input type="radio" name="q1" value="c"> Uykuya dalmak<br>
+      <div class="result" id="result1"></div>
+    </div>
+
+    <div class="question">
+      <p>2. ¿Qué significa <strong>"comida"</strong>?</p>
+      <input type="radio" name="q2" value="a"> İçecek<br>
+      <input type="radio" name="q2" value="b"> Yemek<br>
+      <input type="radio" name="q2" value="c"> Tatlı<br>
+      <div class="result" id="result2"></div>
+    </div>
+
+    <div class="question">
+      <p>3. ¿Qué significa <strong>"feliz"</strong>?</p>
+      <input type="radio" name="q3" value="a"> Üzgün<br>
+      <input type="radio" name="q3" value="b"> Mutlu<br>
+      <input type="radio" name="q3" value="c"> Kızgın<br>
+      <div class="result" id="result3"></div>
+    </div>
+
+    <div class="question">
+      <p>4. ¿Qué significa <strong>"caminar"</strong>?</p>
+      <input type="radio" name="q4" value="a"> Koşmak<br>
+      <input type="radio" name="q4" value="b"> Yüzmek<br>
+      <input type="radio" name="q4" value="c"> Yürümek<br>
+      <div class="result" id="result4"></div>
+    </div>
+
+    <div class="question">
+      <p>5. ¿Qué significa <strong>"mañana"</strong>?</p>
+      <input type="radio" name="q5" value="a"> Gece<br>
+      <input type="radio" name="q5" value="b"> Sabah<br>
+      <input type="radio" name="q5" value="c"> Akşam<br>
+      <div class="result" id="result5"></div>
+    </div>
+
+    <div class="question">
+      <p>6. ¿Qué significa <strong>"gato"</strong>?</p>
+      <input type="radio" name="q6" value="a"> Kedi<br>
+      <input type="radio" name="q6" value="b"> Kuş<br>
+      <input type="radio" name="q6" value="c"> Köpek<br>
+      <div class="result" id="result6"></div>
+    </div>
+
+    <div class="question">
+      <p>7. ¿Qué significa <strong>"nuevo"</strong>?</p>
+      <input type="radio" name="q7" value="a"> Yeni<br>
+      <input type="radio" name="q7" value="b"> Eski<br>
+      <input type="radio" name="q7" value="c"> Bozuk<br>
+      <div class="result" id="result7"></div>
+    </div>
+
+    <div class="question">
+      <p>8. ¿Qué significa <strong>"hablar"</strong>?</p>
+      <input type="radio" name="q8" value="a"> Konuşmak<br>
+      <input type="radio" name="q8" value="b"> Yazmak<br>
+      <input type="radio" name="q8" value="c"> Duymak<br>
+      <div class="result" id="result8"></div>
+    </div>
+
+    <div class="question">
+      <p>9. ¿Qué significa <strong>"viajar"</strong>?</p>
+      <input type="radio" name="q9" value="a"> Seyahat etmek<br>
+      <input type="radio" name="q9" value="b"> Ders çalışmak<br>
+      <input type="radio" name="q9" value="c"> Dinlenmek<br>
+      <div class="result" id="result9"></div>
+    </div>
+
+    <div class="question">
+      <p>10. ¿Qué significa <strong>"ciudad"</strong>?</p>
+      <input type="radio" name="q10" value="a"> Köy<br>
+      <input type="radio" name="q10" value="b"> Şehir<br>
+      <input type="radio" name="q10" value="c"> Mahalle<br>
+      <div class="result" id="result10"></div>
+    </div>
+
+    <button onclick="checkAnswers()">Cevapları Kontrol Et</button>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'c',
+        q5: 'b',
+        q6: 'a',
+        q7: 'a',
+        q8: 'a',
+        q9: 'a',
+        q10: 'b'
+      };
+
+      for (let i = 1; i <= 10; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const result = document.getElementById(`result${i}`);
+        if (selected) {
+          if (selected.value === answers[`q${i}`]) {
+            result.textContent = "✔️ Doğru!";
+            result.style.color = "green";
+          } else {
+            result.textContent = "❌ Yanlış!";
+            result.style.color = "red";
+          }
+        } else {
+          result.textContent = "⚠️ Bir seçenek seçin!";
+          result.style.color = "orange";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
